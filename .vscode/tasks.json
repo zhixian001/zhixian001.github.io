@@ -1,0 +1,24 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "rebuild & serve project",
+            "type": "shell",
+            "command": "bundle exec jekyll build -d public && bundle exec jekyll serve -d public -H 0.0.0.0 --port 4000 --trace",
+            "problemMatcher": [],
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            },
+            "detail" : "프로젝트를 다시 빌드하여 4000번 포트로 호스팅합니다."
+        },
+        {
+            "label": "initialize project",
+            "type": "shell",
+            "command": "bundle install && bundle exec jekyll build -d public",
+            "detail": "jekyll 프로젝트 의존성들을 설치합니다"
+        }
+    ]
+}
