@@ -2,6 +2,7 @@
 title: linux installation checklist
 excerpt: "리눅스 초기 설치 시 배포판에 상관 없이 수행하는 작업 정리"
 tags: [linux, checklist, install]
+key: 191208linuxfresh
 ---
 
 리눅스를 설치할 때 항상 반복하는 작업들
