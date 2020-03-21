@@ -35,7 +35,7 @@ timezone: KR
 ##############################
 author:
   type      : "person"
-  name      : Your Name
+  name      : JHYeom
   url       :
   avatar    : # path or url of avatar image (square)
   bio       : Hello
@@ -46,6 +46,7 @@ author:
   linkedin  : # "user_name" the last part of your profile url, e.g. https://www.linkedin.com/in/user_name
   github    : zhixian001
   npm       : # "user_name" the last part of your profile url, e.g. https://www.npmjs.com/~user_name
+  gitlab    : zhixian001
 
 
 ## => GitHub Repository (if the site is hosted by GitHub)

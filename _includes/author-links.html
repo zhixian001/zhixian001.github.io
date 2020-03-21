@@ -116,5 +116,13 @@
       </li>
     {%- endif -%}
 
+    {%- if _author.gitlab -%}
+      <li title="{{ _locale_string_follow | replace: '[NAME]', 'Gitlab' }}">
+        <a class="button button--circle gitlab-button" itemprop="sameAs" href="https://gitlab.com/{{ _author.gitlab }}" target="_blank">
+          <div class="icon">{%- include svg/icon/social/gitlab.svg -%}</div>
+        </a>
+      </li>
+    {%- endif -%}
+
   </ul>
 </div>
