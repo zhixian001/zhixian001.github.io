@@ -17,7 +17,6 @@ $ sudo passwd
 ### fedora
 
 - fastest mirror 플러그인 활성화
-
 ```bash
 $ echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf && sudo dnf makecache --refresh
 ```
@@ -25,7 +24,7 @@ $ echo "fastestmirror=True" | sudo tee -a /etc/dnf/dnf.conf && sudo dnf makecach
 ### centos
 
 - `/etc/yum.repos.d/`에 아래의  기존 repo들은 압축 후, 카카오 미러용 repo파일 추가
-```repo
+```
 [base]
 name=CentOS-$releasever - Base
 baseurl=http://ftp.daumkakao.com/centos/$releasever/os/$basearch/
@@ -43,7 +42,6 @@ gpgcheck=0
 ### ubuntu
 
 - 카카오 미러 사용
-
 ```bash
 $ sudo sed -i 's/archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
 ```
@@ -84,7 +82,7 @@ $ sudo sed -i 's/archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
 - docker
 - [docker-compose](https://docs.docker.com/compose/install/#install-compose)
 - chrome
-  - [fedora|centos](https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fedora-red-hat-rhel/)
+  - [fedora | centos](https://www.if-not-true-then-false.com/2010/install-google-chrome-with-yum-on-fedora-red-hat-rhel/)
   ```bash
   $ sudo dnf install -y fedora-workstation-repositories
   $ sudo dnf config-manager --set-enabled google-chrome
@@ -115,7 +113,6 @@ $ sudo sed -i 's/archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
 - `.ssh` 디렉터리 만들기. 권한 700
 - 키 생성
   - 다른 기기에 접속하기 위한 기본 키, git ssh 용 키
-
 ```bash
 $ ssh-keygen -t rsa -b 2048 -C "Default ${HOSTNAME}'s ${USER} key" -f "${HOME}/.ssh/id_rsa"
 $ ssh-keygen -t rsa -b 2048 -C "${HOSTNAME} ${USER}'s git key" -f "${HOME}/.ssh/${HOSTNAME}_git_key"
@@ -123,7 +120,7 @@ $ ssh-keygen -t rsa -b 2048 -C "${HOSTNAME} ${USER}'s git key" -f "${HOME}/.ssh/
 
 - config 파일 생성. 권한 400
 
-```sshconfig
+```config
 Host yourhostname
     Hostname 192.168.0.1
     IdentityFile ~/.ssh/id_rsa
@@ -158,13 +155,13 @@ Host yoursecondhostname
     IdentitiesOnly yes
     PreferredAuthentications publickey
     LocalForward 8080 127.0.0.1:8080
+
 ```
 
   - 팁
-
-  ```bash
-  $ chmod u+w "${HOME}/.ssh/config" && vim "${HOME}/.ssh/config" && chmod u-w "${HOME}/.ssh/config"
-  ```
+```bash
+$ chmod u+w "${HOME}/.ssh/config" && vim "${HOME}/.ssh/config" && chmod u-w "${HOME}/.ssh/config"
+```
 
 - 공개 키를 접속을 원하는 호스트에 등록
 
@@ -194,7 +191,7 @@ $ sudo systemctl enable sshd
 
 ## .bashrc 수정
 
-```bashrc
+```bash
 # ...
 # skip
 alias l='ls --color=auto'
