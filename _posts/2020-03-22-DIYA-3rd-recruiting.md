@@ -1,6 +1,6 @@
 ---
 title: DIYA 3기 리크루팅 (~ 20.04.10)
-excerpt: "머신 러닝 동아리 DIYA 3기 회원 모집중! (~2020년 "
+excerpt: "머신 러닝 동아리 DIYA 3기 회원 모집중! (~2020년 4월 10일)"
 tags: [DIYA]
 key: 200322DIYA
 lightbox: false
