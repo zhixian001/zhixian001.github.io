@@ -1,0 +1,19 @@
+{
+  "Empty Post" : {
+    "scope": "markdown",
+    "prefix": "!!!!!",
+    "description": "New Blog Post",
+    "body" : [
+      "---",
+      "title: ${1:Post Title}",
+      "excerpt: \"${2:Excerpt Text}\"",
+      "tags: [${7:Article Tags}]",
+      "key: $CURRENT_YEAR_SHORT$CURRENT_MONTH$CURRENT_DATE${3:unique keyname}",
+      "type: ${4|article|}",
+      "lang: ${5|en,ko|}",
+      "lightbox: ${6|false,true|}",
+      "---",
+      "$0"
+    ]
+  }
+}
