@@ -82,7 +82,7 @@ export default function HistoryLine() {
             <Typography variant="h6" component="h1">
               Sleep
           </Typography>
-            <Typography>Because I need rest</Typography>
+            <Typography>Because I need rest.</Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
@@ -97,7 +97,7 @@ export default function HistoryLine() {
             <Typography variant="h6" component="h1">
               Repeat
           </Typography>
-            <Typography>Because this is the life you love!</Typography>
+            <Typography>Because this is the life I love!</Typography>
           </Paper>
         </TimelineContent>
       </TimelineItem>
