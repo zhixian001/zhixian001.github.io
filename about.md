@@ -26,4 +26,6 @@ titles:
 # key: page-about
 ---
 
-Hello.
+<!-- See: https://medium.com/@allizadrozny/using-webpack-and-react-with-jekyll-cfe137f8a2cc -->
+<div id="content-root"></div>
+<script type="text/javascript" src="/assets/javascripts/bundle.js" charset="utf-8"></script>
