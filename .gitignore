@@ -25,3 +25,8 @@ _site/
 .jekyll-metadata
 .jekyll-cache/
 public/
+# assets/bundle.js
+assets/bundle.js.*
+# assets/javascripts/bundle.js
+assets/javascripts/bundle.js.*
+node_modules
