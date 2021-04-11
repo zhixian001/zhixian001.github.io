@@ -1,6 +1,7 @@
 ---
 layout: article
-title: [Typescript] Symlink 로 빌드 디렉터리의 구조 변경 없이 소스 디렉터리 밖의 모듈 가져오기
+title: |
+  [Typescript] Symlink 로 빌드 디렉터리의 구조 변경 없이 소스 디렉터리 밖의 모듈 가져오기
 excerpt: "Symbolic Link 기능으로 빌드 디렉터리의 구조를 해치지 않고 소스 디렉터리 외부의 모듈 (ts, js, json 등등) 을 가져오기."
 tags: [tip, typescript, build]
 key: 201205ts-build-import
