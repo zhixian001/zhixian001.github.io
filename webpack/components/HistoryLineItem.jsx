@@ -22,8 +22,20 @@ import MarkdownContent from './MarkdownContent';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
-    padding: '6px 16px',
+    padding: '16px 20px',
     textAlign: 'left',
+    '& h4': {
+      margin: '0 0 4px 0 !important',
+      fontSize: '1.05rem',
+      fontWeight: 600,
+      lineHeight: 1.3,
+    },
+    '& p': {
+      margin: '0 !important',
+      fontSize: '0.9rem',
+      color: theme.palette.text.secondary,
+      lineHeight: 1.4,
+    },
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
