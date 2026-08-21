@@ -12,6 +12,7 @@ import StarBorderIcon from '@material-ui/icons/StarBorder';
 import HistoryLineItem from './HistoryLineItem';
 
 import MojitokIcon from './res/MojitokIcon';
+import TossIcon from './res/TossIcon';
 
 import Grow from '@material-ui/core/Grow';
 
@@ -30,6 +31,8 @@ function iconTypeParser(iconType) {
       return (<SchoolIcon />);
     case 'mojitok':
       return (<MojitokIcon />);
+    case 'toss':
+      return (<TossIcon />);
     case 'code':
       return (<CodeIcon />);
     
