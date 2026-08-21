@@ -1,0 +1,18 @@
+<header class="header">
+  <div class="main">
+    <div class="header__title">
+      <div class="header__brand">
+        {{ partial "svg/logo.svg" . }}
+        <a title="{{ .Site.Params.description }}" href="{{ "/" | relURL }}">{{ .Site.Title }}</a>
+      </div>
+      <button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button>
+    </div>
+    <nav class="navigation">
+      <ul>
+        <li class="navigation__item{{ if eq .RelPermalink "/archive/" }} navigation__item--active{{ end }}"><a href="{{ "/archive" | relURL }}">Archive</a></li>
+        <li class="navigation__item{{ if eq .RelPermalink "/about/" }} navigation__item--active{{ end }}"><a href="{{ "/about" | relURL }}">About</a></li>
+        <li><button class="button button--secondary button--circle search-button js-search-toggle"><i class="fas fa-search"></i></button></li>
+      </ul>
+    </nav>
+  </div>
+</header>

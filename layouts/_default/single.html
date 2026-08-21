@@ -1,0 +1,24 @@
+{{ define "main" }}
+<article itemscope itemtype="http://schema.org/Article">
+  {{ partial "article-header.html" . }}
+  {{ if eq .Section "posts" }}
+    {{ partial "article-info.html" . }}
+  {{ end }}
+  <div class="js-article-content">
+    <div class="layout--article">
+      <div class="article__content" itemprop="articleBody">
+        {{ .Content }}
+      </div>
+    </div>
+  </div>
+  {{ if eq .Section "posts" }}
+    {{ partial "article-footer.html" . }}
+    {{ partial "article-section-navigator.html" . }}
+  {{ end }}
+  {{ if and (eq .Section "posts") .Params.key }}
+    <section class="page__comments d-print-none">
+      {{ partial "comments.html" . }}
+    </section>
+  {{ end }}
+</article>
+{{ end }}

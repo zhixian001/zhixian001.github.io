@@ -1,0 +1,12 @@
+{{- $prev := .PrevInSection -}}
+{{- $next := .NextInSection -}}
+{{- if or $prev $next -}}
+<div class="article__section-navigator clearfix">
+  {{- with $prev -}}
+  <div class="previous"><span>PREVIOUS</span><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+  {{- end -}}
+  {{- with $next -}}
+  <div class="next"><span>NEXT</span><a href="{{ .RelPermalink }}">{{ .Title }}</a></div>
+  {{- end -}}
+</div>
+{{- end -}}

@@ -5,8 +5,8 @@
   "main": ".commitlintrc.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "webpack": "webpack --mode production",
-    "webpack-dev": "webpack --mode development"
+    "webpack": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode production",
+    "webpack-dev": "NODE_OPTIONS=--openssl-legacy-provider webpack --mode development"
   },
   "repository": {
     "type": "git",

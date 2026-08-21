@@ -1,0 +1,26 @@
+{{- $author := .Site.Params.author -}}
+<div class="author-links">
+  <ul class="menu menu--nowrap menu--inline">
+    {{- with $author.email -}}
+    <li title="Email">
+      <a class="button button--circle mail-button" itemprop="email" href="mailto:{{ . }}" target="_blank">
+        <i class="fas fa-envelope"></i>
+      </a>
+    </li>
+    {{- end -}}
+    {{- with $author.github -}}
+    <li title="Follow me on Github">
+      <a class="button button--circle github-button" itemprop="sameAs" href="https://github.com/{{ . }}" target="_blank">
+        <div class="icon">{{ partial "svg/icon/social/github.svg" $ }}</div>
+      </a>
+    </li>
+    {{- end -}}
+    {{- with $author.gitlab -}}
+    <li title="Follow me on Gitlab">
+      <a class="button button--circle gitlab-button" itemprop="sameAs" href="https://gitlab.com/{{ . }}" target="_blank">
+        <div class="icon">{{ partial "svg/icon/social/gitlab.svg" $ }}</div>
+      </a>
+    </li>
+    {{- end -}}
+  </ul>
+</div>

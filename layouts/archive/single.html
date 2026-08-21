@@ -1,0 +1,28 @@
+{{ define "main" }}
+<div class="layout--archive js-all">
+  <header><h1>Archive</h1></header>
+  {{ partial "tags.html" . }}
+  <div class="js-result layout--archive__result d-none">
+    <div class="article-list items">
+      {{- $posts := where .Site.RegularPages "Section" "posts" -}}
+      {{- range $posts.GroupByDate "2006" -}}
+      <section>
+        <h2 class="article-list__group-header">{{ .Key }}</h2>
+        <ul class="items">
+          {{- range .Pages -}}
+          {{- $tagList := delimit .Params.tags "," -}}
+          <li class="item" itemscope itemtype="http://schema.org/BlogPosting" data-tags="{{ $tagList }}">
+            <div class="item__content">
+              <span class="item__meta">{{ .Date.Format "Jan 02" }}</span>
+              <a itemprop="headline" class="item__header" href="{{ .RelPermalink }}">{{ .Title }}</a>
+            </div>
+          </li>
+          {{- end -}}
+        </ul>
+      </section>
+      {{- end -}}
+    </div>
+  </div>
+</div>
+<script src="{{ "/assets/javascripts/archive-bundle.js" | relURL }}"></script>
+{{ end }}

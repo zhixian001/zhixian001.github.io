@@ -1,0 +1,71 @@
+disablePathToLower: true
+baseURL: "https://blog.jhyeom.com/"
+title: "JHYeom's Blog"
+locale: "ko_KR"
+defaultContentLanguage: "en"
+hasCJKLanguage: true
+paginate: 8
+
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
+  highlight:
+    codeFences: true
+    guessSyntax: true
+    noClasses: true
+    style: "monokai"
+
+permalinks:
+  page:
+    posts: "/:slug"
+  posts: "/:slug"
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON
+  page:
+    - HTML
+  section:
+    - HTML
+    - RSS
+  taxonomy:
+    - HTML
+  term:
+    - HTML
+
+params:
+  description: "JHYeom(zhixian001)'s blog"
+  lang: "en"
+  timezone: "KR"
+  text_skin: "default"
+  highlight_theme: "tomorrow-night"
+  license: "CC-BY-NC-4.0"
+  mathjax: true
+  mathjax_autoNumber: true
+  mermaid: true
+  chart: true
+  author:
+    type: "person"
+    name: "JHYeom"
+    bio: "Hello"
+    email: "okyjh2014@gmail.com"
+    github: "zhixian001"
+    gitlab: "zhixian001"
+  comments:
+    provider: "disqus"
+    disqus:
+      shortname: "blog-jhyeom-com"
+  analytics:
+    provider: "google"
+    google:
+      tracking_id: "UA-161593333-1"
+  search:
+    provider: "default"
+  paths:
+    root: "/"
+    home: "/"
+    archive: "/archive"
+    rss: "/index.xml"

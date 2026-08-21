@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {{ partial "analytics.html" . }}
+    {{ partial "head.html" . }}
+    <script src="{{ "/assets/javascripts/theme-head.js" | relURL }}"></script>
+    {{ partial "scripts/variables.html" . }}
+  </head>
+  <body>
+    <div class="root" data-is-touch="false">
+      <div class="layout--page js-page-root">
+        <div class="page__main js-page-main page__viewport{{ if or (eq .Section "posts") .Params.aside }} has-aside{{ end }} cell cell--auto">
+          <div class="page__main-inner">
+            <div class="page__header d-print-none">
+              {{ partial "header.html" . }}
+            </div>
+            <div class="page__content">
+              <div class="main">
+                <div class="grid grid--reverse">
+                  <div class="col-aside d-print-none js-col-aside">
+                    {{ block "aside" . }}{{ end }}
+                  </div>
+                  <div class="col-main cell cell--auto">
+                    {{ block "main" . }}{{ end }}
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="page__footer d-print-none">
+              {{ partial "footer.html" . }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal modal--overflow page__search-modal d-print-none js-page-search-modal">
+        {{ partial "search.html" . }}
+      </div>
+    </div>
+    <script src="{{ "/assets/javascripts/theme-common.js" | relURL }}"></script>
+    {{ block "scripts" . }}{{ end }}
+  </body>
+</html>

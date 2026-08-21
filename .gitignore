@@ -30,3 +30,7 @@ assets/bundle.js.*
 # assets/javascripts/bundle.js
 assets/javascripts/bundle.js.*
 node_modules
+.hugo_build.lock
+resources/_gen/
+_site_jekyll_baseline/
+_site_hugo/
