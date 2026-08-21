@@ -14,14 +14,24 @@ const useStyles = makeStyles((theme) => ({
   },
   linkButton: {
     textTransform: 'none',
-    backgroundColor: '#0a66c2',
-    color: '#ffffff',
+    backgroundColor: '#ffffff',
+    color: '#0a66c2 !important',
+    border: '1.5px solid #0a66c2 !important',
+    borderRadius: '24px',
     padding: '8px 24px',
     fontSize: '0.95rem',
-    fontWeight: 500,
+    fontWeight: 600,
+    boxShadow: '0 1px 3px rgba(0, 0, 0, 0.05)',
     '&:hover': {
-      backgroundColor: '#004182',
+      backgroundColor: '#0a66c2 !important',
+      color: '#ffffff !important',
+      '& $icon': {
+        color: '#ffffff',
+      },
     },
+  },
+  icon: {
+    color: '#0a66c2',
   },
 }));
 
@@ -31,8 +41,8 @@ export default function Profile() {
   return (
     <Paper elevation={0} className={classes.root}>
       <Button
-        variant="contained"
-        startIcon={<LinkedInIcon />}
+        variant="outlined"
+        startIcon={<LinkedInIcon className={classes.icon} />}
         className={classes.linkButton}
         href="https://www.linkedin.com/in/제헌-염-8097151a3"
         target="_blank"
