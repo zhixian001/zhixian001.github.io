@@ -49,7 +49,9 @@ jobs:
           extended: true
 
       - name: Build Hugo
-        run: hugo --minify
+        run: |
+          hugo --minify
+          mkdir -p public/page2 && cp public/page/2/index.html public/page2/index.html 2>/dev/null || true
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

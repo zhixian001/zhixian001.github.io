@@ -16,16 +16,11 @@
   </div>
 </div>
 <script>
-window.TEXT_SEARCH_DATA = {
-  'posts': [
-    {{- range $index, $page := where .Site.RegularPages "Section" "posts" -}}
-    {{- if $index }},{{ end }}
-    {
-      "title": {{ strings.TrimSpace (strings.TrimPrefix "\"" (strings.TrimSuffix "\"" $page.Title)) | jsonify }},
-      "url": {{ $page.RelPermalink | jsonify }}
-    }
-    {{- end }}
-  ]
-};
+{{- $postList := slice -}}
+{{- range where .Site.RegularPages "Section" "posts" -}}
+  {{- $cleanTitle := .Title | strings.TrimPrefix "\"" | strings.TrimSuffix "\"" | strings.TrimSpace -}}
+  {{- $postList = $postList | append (dict "title" $cleanTitle "url" .RelPermalink) -}}
+{{- end -}}
+window.TEXT_SEARCH_DATA = {{ dict "posts" $postList | jsonify | safeJS }};
 </script>
 <script src="{{ "/assets/javascripts/search-bundle.js" | relURL }}"></script>
