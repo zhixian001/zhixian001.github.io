@@ -1,12 +1,12 @@
 [
     {
-        "date": "2019-12 ~ 2023-11",
-        "iconType": "mojitok",
-        "filename": "mojitok01"
-    },
-    {
         "date": "2023-12 ~",
         "iconType": "toss",
         "filename": "toss01"
+    },
+    {
+        "date": "2019-12 ~ 2023-11",
+        "iconType": "mojitok",
+        "filename": "mojitok01"
     }
 ]
