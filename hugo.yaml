@@ -54,6 +54,7 @@ params:
     email: "okyjh2014@gmail.com"
     github: "zhixian001"
     gitlab: "zhixian001"
+    linkedin: "https://www.linkedin.com/in/제헌-염-8097151a3"
   comments:
     provider: "disqus"
     disqus:

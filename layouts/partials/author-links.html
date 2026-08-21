@@ -22,5 +22,16 @@
       </a>
     </li>
     {{- end -}}
+    {{- with $author.linkedin -}}
+    <li title="Follow me on Linkedin">
+      {{- if hasPrefix . "http" -}}
+      <a class="button button--circle linkedin-button" itemprop="sameAs" href="{{ . }}" target="_blank">
+      {{- else -}}
+      <a class="button button--circle linkedin-button" itemprop="sameAs" href="https://www.linkedin.com/in/{{ . }}" target="_blank">
+      {{- end -}}
+        <div class="icon">{{ partial "svg/icon/social/linkedin.svg" $ }}</div>
+      </a>
+    </li>
+    {{- end -}}
   </ul>
 </div>
