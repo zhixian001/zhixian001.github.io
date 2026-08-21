@@ -1,5 +1,7 @@
-<footer class="article__footer">
+{{- if .Site.Params.license -}}
+<footer class="article__footer" style="opacity: 0.5; font-size: 0.8rem; margin: 1.5rem 0;">
   <div class="article__license">
-    This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
+    This work is licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" style="color: inherit; text-decoration: underline;">Creative Commons Attribution-NonCommercial 4.0 International License</a>.
   </div>
 </footer>
+{{- end -}}
