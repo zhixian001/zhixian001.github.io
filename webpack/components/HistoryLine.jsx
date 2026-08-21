@@ -74,6 +74,16 @@ export default function HistoryLine() {
       in={true}
     >
       <Timeline align="alternate">
+        {contentList.map(d => (
+          <HistoryLineItem
+            markdown={d.markdown}
+            historyDate={d.date}
+            dotStyle={d.dotStyle}
+            key={d.date}
+          >
+            {d.icon}
+          </HistoryLineItem>
+        ))}
         <TimelineItem style={{ minHeight: 28 }}>
           <TimelineOppositeContent style={{ flex: 1, padding: 0 }} />
           <TimelineSeparator>
@@ -87,20 +97,9 @@ export default function HistoryLine() {
                 boxShadow: 'none',
               }}
             />
-            <TimelineConnector style={{ height: 16 }} />
           </TimelineSeparator>
           <TimelineContent style={{ flex: 1, padding: 0 }} />
         </TimelineItem>
-        {contentList.map(d => (
-          <HistoryLineItem
-            markdown={d.markdown}
-            historyDate={d.date}
-            dotStyle={d.dotStyle}
-            key={d.date}
-          >
-            {d.icon}
-          </HistoryLineItem>
-        ))}     
       </Timeline>
     </Grow>
   );
