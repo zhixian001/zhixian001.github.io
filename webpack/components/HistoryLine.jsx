@@ -3,6 +3,12 @@ import { makeStyles } from '@material-ui/core/styles';
 
 import { SvgIcon } from "@material-ui/core";
 import Timeline from '@material-ui/lab/Timeline';
+import TimelineItem from '@material-ui/lab/TimelineItem';
+import TimelineSeparator from '@material-ui/lab/TimelineSeparator';
+import TimelineConnector from '@material-ui/lab/TimelineConnector';
+import TimelineContent from '@material-ui/lab/TimelineContent';
+import TimelineOppositeContent from '@material-ui/lab/TimelineOppositeContent';
+import TimelineDot from '@material-ui/lab/TimelineDot';
 import CodeIcon from '@material-ui/icons/Code';
 
 
@@ -68,6 +74,23 @@ export default function HistoryLine() {
       in={true}
     >
       <Timeline align="alternate">
+        <TimelineItem style={{ minHeight: 28 }}>
+          <TimelineOppositeContent style={{ flex: 1, padding: 0 }} />
+          <TimelineSeparator>
+            <TimelineDot
+              style={{
+                backgroundColor: '#bdbdbd',
+                width: 8,
+                height: 8,
+                margin: '0 auto',
+                padding: 0,
+                boxShadow: 'none',
+              }}
+            />
+            <TimelineConnector style={{ height: 16 }} />
+          </TimelineSeparator>
+          <TimelineContent style={{ flex: 1, padding: 0 }} />
+        </TimelineItem>
         {contentList.map(d => (
           <HistoryLineItem
             markdown={d.markdown}
