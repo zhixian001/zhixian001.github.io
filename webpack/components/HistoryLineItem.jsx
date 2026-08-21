@@ -52,7 +52,7 @@ export default function HistoryLineItem(props) {
       <TimelineSeparator>
         <TimelineDot
           color="primary"
-          // variant="outlined"
+          style={props.dotStyle}
         >
           {props.children}
         </TimelineDot>

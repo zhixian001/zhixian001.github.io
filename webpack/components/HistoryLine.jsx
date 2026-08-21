@@ -53,6 +53,7 @@ export default function HistoryLine() {
       return {
         date: d.date,
         icon: iconTypeParser(d.iconType),
+        dotStyle: d.iconType === 'toss' ? { backgroundColor: '#ffffff', border: '1.5px solid #e8f0fe', boxShadow: '0 1px 4px rgba(0, 0, 0, 0.08)' } : undefined,
         markdown: {
           markdownUrl: `/assets/contents/${d.filename}.md`
         }
@@ -71,6 +72,7 @@ export default function HistoryLine() {
           <HistoryLineItem
             markdown={d.markdown}
             historyDate={d.date}
+            dotStyle={d.dotStyle}
             key={d.date}
           >
             {d.icon}
