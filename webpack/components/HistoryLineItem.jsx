@@ -20,9 +20,10 @@ import MarkdownContent from './MarkdownContent';
  * }} HistoryLineItemProps
  */
 
- const useStyles = makeStyles((theme) => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
     padding: '6px 16px',
+    textAlign: 'left',
   },
   secondaryTail: {
     backgroundColor: theme.palette.secondary.main,
