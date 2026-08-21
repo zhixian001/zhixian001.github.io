@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+      - chore/clean-jekyll-remnants
+  pull_request:
   workflow_dispatch:
 
 permissions:
@@ -30,13 +32,13 @@ jobs:
           node-version: 20
 
       - name: Setup pnpm
-        uses: pnpm/action-setup@v3
+        uses: pnpm/action-setup@v4
         with:
-          version: 8
+          version: 10
 
       - name: Install dependencies & build webpack bundle
         run: |
-          pnpm install --frozen-lockfile || pnpm install
+          pnpm install
           pnpm run webpack
           cp -r assets/javascripts/* static/assets/javascripts/ 2>/dev/null || true
 
@@ -55,6 +57,7 @@ jobs:
           path: ./public
 
   deploy:
+    if: github.ref == 'refs/heads/master'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
