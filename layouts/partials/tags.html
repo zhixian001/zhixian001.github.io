@@ -1,0 +1,18 @@
+{{- $posts := where .Site.RegularPages "Section" "posts" -}}
+{{- $tags := .Site.Taxonomies.tags -}}
+<div class="site-tags js-tags">
+  <ul class="menu">
+    <li>
+      <button type="button" class="button button--secondary button--pill tag-button tag-button--all" data-encode="">
+        Show All<div class="tag-button__count">{{ len $posts }}</div>
+      </button>
+    </li>
+    {{- range $name, $taxonomy := $tags -}}
+    <li>
+      <button type="button" class="button button--pill tag-button tag-button-1" data-encode="{{ $name | urlquery }}">
+        <span>{{ $name }}</span><div class="tag-button__count">{{ $taxonomy.Count }}</div>
+      </button>
+    </li>
+    {{- end -}}
+  </ul>
+</div>

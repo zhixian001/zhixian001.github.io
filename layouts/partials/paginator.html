@@ -1,0 +1,29 @@
+{{- $paginator := .Paginator -}}
+{{- if gt $paginator.TotalPages 1 -}}
+<div class="pagination">
+  <p>{{ len (where .Site.RegularPages "Section" "posts") }} posts, {{ $paginator.TotalPages }} pages in total.</p>
+  <div class="pagination__menu">
+    <ul class="menu menu--nowrap">
+      {{- if $paginator.HasPrev -}}
+      <li><a class="button button--secondary button--circle" href="{{ $paginator.Prev.URL }}"><i class="fas fa-angle-left"></i></a></li>
+      {{- else -}}
+      <li><div class="button button--secondary button--circle disabled"><i class="fas fa-angle-left"></i></div></li>
+      {{- end -}}
+
+      {{- range $paginator.Pagers -}}
+      {{- if eq . $paginator -}}
+      <li><div class="button button--primary button--circle focus"><span>{{ .PageNumber }}</span></div></li>
+      {{- else -}}
+      <li><a class="button button--secondary button--circle" href="{{ .URL }}"><span>{{ .PageNumber }}</span></a></li>
+      {{- end -}}
+      {{- end -}}
+
+      {{- if $paginator.HasNext -}}
+      <li><a class="button button--secondary button--circle" href="{{ $paginator.Next.URL }}"><i class="fas fa-angle-right"></i></a></li>
+      {{- else -}}
+      <li><div class="button button--secondary button--circle disabled"><i class="fas fa-angle-right"></i></div></li>
+      {{- end -}}
+    </ul>
+  </div>
+</div>
+{{- end -}}

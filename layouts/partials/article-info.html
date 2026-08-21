@@ -1,0 +1,18 @@
+<div class="article__info clearfix">
+  {{- with .Params.tags -}}
+  <ul class="left-col menu">
+    {{- range . -}}
+    <li>
+      <a class="button button--secondary button--pill button--sm" href="{{ printf "/archive?tag=%s" (urlquery .) | relURL }}">{{ . }}</a>
+    </li>
+    {{- end -}}
+  </ul>
+  {{- end -}}
+  <ul class="right-col menu">
+    {{- if not .Date.IsZero -}}
+    <li>
+      <i class="far fa-calendar-alt"></i> <span>{{ .Date.Format "2006년 01월 02일" }}</span>
+    </li>
+    {{- end -}}
+  </ul>
+</div>

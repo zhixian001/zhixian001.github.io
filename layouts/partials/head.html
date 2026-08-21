@@ -1,0 +1,40 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+{{- $pageTitle := "" -}}
+{{- if .IsHome -}}
+  {{- $pageTitle = printf "Home - %s" .Site.Title -}}
+{{- else if .Title -}}
+  {{- $pageTitle = printf "%s - %s" .Title .Site.Title -}}
+{{- else -}}
+  {{- $pageTitle = .Site.Title -}}
+{{- end -}}
+<title>{{ $pageTitle }}</title>
+
+<meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Params.description }}{{ end }}{{ end }}">
+<link rel="canonical" href="{{ .Permalink }}">
+<link rel="alternate" type="application/rss+xml" title="{{ .Site.Title }}" href="{{ "/index.xml" | absURL }}">
+
+<!-- Favicons -->
+<link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/apple-touch-icon.png" | relURL }}">
+<link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon-32x32.png" | relURL }}">
+<link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon-16x16.png" | relURL }}">
+<link rel="manifest" href="{{ "/assets/site.webmanifest" | relURL }}">
+<link rel="mask-icon" href="{{ "/assets/safari-pinned-tab.svg" | relURL }}" color="#fc4d50">
+<link rel="shortcut icon" href="{{ "/assets/favicon.ico" | relURL }}">
+<meta name="msapplication-TileColor" content="#ffc40d">
+<meta name="msapplication-config" content="{{ "/assets/browserconfig.xml" | relURL }}">
+<meta name="theme-color" content="#ffffff">
+
+<!-- Main Stylesheet (Compiled SCSS) -->
+{{- $scss := resources.Get "scss/main.scss" -}}
+{{- if $scss -}}
+  {{- $css := $scss | toCSS (dict "targetPath" "assets/css/main.css") -}}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}">
+{{- else -}}
+  <link rel="stylesheet" href="{{ "/assets/css/main.css" | relURL }}">
+{{- end -}}
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
