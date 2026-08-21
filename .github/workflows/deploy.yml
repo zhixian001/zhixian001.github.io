@@ -4,8 +4,9 @@ on:
   push:
     branches:
       - master
-      - chore/clean-jekyll-remnants
   pull_request:
+    branches:
+      - master
   workflow_dispatch:
 
 permissions:
@@ -54,12 +55,13 @@ jobs:
           mkdir -p public/page2 && cp public/page/2/index.html public/page2/index.html 2>/dev/null || true
 
       - name: Upload artifact
+        if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./public
 
   deploy:
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/master' && github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
